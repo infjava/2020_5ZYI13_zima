@@ -12,9 +12,10 @@ public class DigitalneHodiny {
      * polnoci (00:00).
      */
     public DigitalneHodiny() {
-        this.hodiny = new CiselnyDisplej(13);
-        this.minuty = new CiselnyDisplej(60);
-        this.sekundy = new CiselnyDisplej(60);
+        this.hodiny = new CiselnyDisplej(1, 13);
+        this.minuty = new CiselnyDisplej(0, 60);
+        this.sekundy = new CiselnyDisplej(0, 60);
+        this.hodiny.setHodnota(12);
     }
     
     /**
@@ -29,10 +30,6 @@ public class DigitalneHodiny {
             if (this.minuty.getHodnota() == 0) {
                 this.hodiny.krok();
             }
-        }
-        
-        if (this.hodiny.getHodnota() == 0) {
-            this.hodiny.krok();
         }
     }
     
