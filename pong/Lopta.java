@@ -19,7 +19,11 @@ public class Lopta {
     }
     
     public void posun() {
+        this.grafika.skry();
+        
         this.grafika.posunVodorovne(this.smerX);
         this.grafika.posunZvisle(this.smerY);
+        
+        this.grafika.zobraz();
     }
 }
