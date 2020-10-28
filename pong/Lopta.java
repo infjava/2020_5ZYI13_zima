@@ -1,8 +1,7 @@
 public class Lopta {
     private Kruh grafika;
     
-    private int smerX;
-    private int smerY;
+    private String smer;
     
     public Lopta() {
         this.grafika = new Kruh();
@@ -12,14 +11,24 @@ public class Lopta {
         this.grafika.posunVodorovne(125);
         this.grafika.posunZvisle(85);
         
-        this.smerX = +10;
-        this.smerY = +10;
+        this.smer = "PD";
         
         this.grafika.zobraz();
     }
     
     public void posun() {
-        this.grafika.posunVodorovne(this.smerX);
-        this.grafika.posunZvisle(this.smerY);
+        if (this.smer.equals("PD")) {
+            this.grafika.posunVodorovne(+10);
+            this.grafika.posunZvisle(+10);
+        } else if (this.smer.equals("LD")) {
+            this.grafika.posunVodorovne(-10);
+            this.grafika.posunZvisle(+10);
+        } else if (this.smer.equals("PH")) {
+            this.grafika.posunVodorovne(+10);
+            this.grafika.posunZvisle(-10);
+        } else if (this.smer.equals("LH")) {
+            this.grafika.posunVodorovne(-10);
+            this.grafika.posunZvisle(-10);
+        }
     }
 }
