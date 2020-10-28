@@ -12,8 +12,8 @@ public class Lopta {
         this.grafika.posunVodorovne(125);
         this.grafika.posunZvisle(85);
         
-        this.smerX = +1;
-        this.smerY = +1;
+        this.smerX = +10;
+        this.smerY = +10;
         
         this.grafika.zobraz();
     }
