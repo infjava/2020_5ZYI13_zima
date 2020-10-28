@@ -17,18 +17,23 @@ public class Lopta {
     }
     
     public void posun() {
-        if (this.smer.equals("PD")) {
-            this.grafika.posunVodorovne(+10);
-            this.grafika.posunZvisle(+10);
-        } else if (this.smer.equals("LD")) {
-            this.grafika.posunVodorovne(-10);
-            this.grafika.posunZvisle(+10);
-        } else if (this.smer.equals("PH")) {
-            this.grafika.posunVodorovne(+10);
-            this.grafika.posunZvisle(-10);
-        } else if (this.smer.equals("LH")) {
-            this.grafika.posunVodorovne(-10);
-            this.grafika.posunZvisle(-10);
+        switch (this.smer) {
+            case "PD":
+                this.grafika.posunVodorovne(+10);
+                this.grafika.posunZvisle(+10);
+                break;
+            case "LD":
+                this.grafika.posunVodorovne(-10);
+                this.grafika.posunZvisle(+10);
+                break;
+            case "PH":
+                this.grafika.posunVodorovne(+10);
+                this.grafika.posunZvisle(-10);
+                break;
+            case "LH":
+                this.grafika.posunVodorovne(-10);
+                this.grafika.posunZvisle(-10);
+                break;
         }
     }
 }
