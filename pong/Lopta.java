@@ -60,4 +60,8 @@ public class Lopta {
     public int getStredY() {
         return this.poziciaY;
     }
+    
+    public void odrazX() {
+        this.smerX = -this.smerX;
+    }
 }

@@ -29,6 +29,10 @@ public class HraciePole {
     
     public void tik() {
         this.lopta.posun();
+        
+        if (this.lavyPad.koliduje(this.lopta) || this.pravyPad.koliduje(this.lopta)) {
+            this.lopta.odrazX();
+        }
     }
     
     public void spusti() {
