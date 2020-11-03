@@ -3,6 +3,7 @@ import java.util.Random;
 public class Lopta {
     private Kruh grafika;
     
+    private int poziciaX;
     private int poziciaY;
     
     private int smerX;
@@ -16,6 +17,7 @@ public class Lopta {
         this.grafika.zmenPriemer(10);
         
         this.poziciaY = nahodneCisla.nextInt(281) + 10;
+        this.poziciaX = 150;
         
         this.grafika.posunVodorovne(125);
         this.grafika.posunZvisle(this.poziciaY - 65);
@@ -45,8 +47,17 @@ public class Lopta {
         this.grafika.posunVodorovne(this.smerX);
         this.grafika.posunZvisle(this.smerY);
         
-        this.poziciaY = this.poziciaY + this.smerY;
+        this.poziciaY += this.smerY;
+        this.poziciaX += this.smerX;
         
         this.grafika.zobraz();
+    }
+    
+    public int getStredX() {
+        return this.poziciaX;
+    }
+    
+    public int getStredY() {
+        return this.poziciaY;
     }
 }
