@@ -33,6 +33,10 @@ public class HraciePole {
         if (this.lavyPad.koliduje(this.lopta) || this.pravyPad.koliduje(this.lopta)) {
             this.lopta.odrazX();
         }
+        
+        if (this.lopta.jeMimoObrazovky()) {
+            this.lopta.umiestni();
+        }
     }
     
     public void spusti() {
