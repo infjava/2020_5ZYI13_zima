@@ -10,8 +10,8 @@ public class HraciePole {
         this.lopta = new Lopta();
         this.lavyPad = new Pad(false);
         this.pravyPad = new Pad(true);
-        this.laveSkore = new Skore();
-        this.praveSkore = new Skore();
+        this.laveSkore = new Skore(false);
+        this.praveSkore = new Skore(true);
         this.manazer = new Manazer();
     }
     
