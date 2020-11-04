@@ -39,6 +39,10 @@ public class HraciePole {
         }
     }
     
+    public void zrus() {
+        System.exit(0);
+    }
+    
     public void spusti() {
         this.manazer.spravujObjekt(this);
     }
