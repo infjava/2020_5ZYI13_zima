@@ -3,11 +3,15 @@ public class HraciePole {
     private Pad lavyPad;
     private Pad pravyPad;
     private Manazer manazer;
+    private Skore laveSkore;
+    private Skore praveSkore;
     
     public HraciePole() {
         this.lopta = new Lopta();
         this.lavyPad = new Pad(false);
         this.pravyPad = new Pad(true);
+        this.laveSkore = new Skore();
+        this.praveSkore = new Skore();
         this.manazer = new Manazer();
     }
     
@@ -35,6 +39,12 @@ public class HraciePole {
         }
         
         if (this.lopta.jeMimoObrazovky()) {
+            if (this.lopta.getStredX() <= 0) {
+                this.praveSkore.zvys();
+            } else if (this.lopta.getStredX() >= 300) {
+                this.laveSkore.zvys();
+            }
+            
             this.lopta.umiestni();
         }
     }
