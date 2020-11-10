@@ -14,15 +14,18 @@ public class Ucet {
     }
     
     public void vyber(int eur, int centov) {
-        if (centov >= 100) {
+        if (centov >= 100 || centov < 0) {
+            System.out.println("Nesprávna hodnota centov");
             return;
         }
         
-        if (eur < 0 || centov < 0) {
+        if (eur < 0) {
+            System.out.println("Nesprávna hodnota eur");
             return;
         }
         
         if (eur * 100 + centov > this.sumaVCentoch) {
+            System.out.println("Teľo nemáš na účte");
             return;
         }
         
@@ -30,11 +33,13 @@ public class Ucet {
     }
     
     public void vloz(int eur, int centov) {
-        if (centov >= 100) {
+        if (centov >= 100 || centov < 0) {
+            System.out.println("Nesprávna hodnota centov");
             return;
         }
         
-        if (eur < 0 || centov < 0) {
+        if (eur < 0) {
+            System.out.println("Nesprávna hodnota eur");
             return;
         }
         
