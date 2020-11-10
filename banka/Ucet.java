@@ -8,4 +8,8 @@ public class Ucet {
         this.menoMajitela = menoMajitela;
         this.sumaVCentoch = 0;
     }
+    
+    public String getIban() {
+        return this.iban;
+    }
 }
