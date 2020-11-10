@@ -14,21 +14,31 @@ public class Ucet {
     }
     
     public void vyber(int eur, int centov) {
-        if (centov < 100) {
-            if (eur >= 0 && centov >= 0) {
-                if (eur * 100 + centov <= this.sumaVCentoch) {
-                    this.sumaVCentoch -= eur * 100 + centov;
-                }
-            }
+        if (centov >= 100) {
+            return;
         }
+        
+        if (eur < 0 || centov < 0) {
+            return;
+        }
+        
+        if (eur * 100 + centov > this.sumaVCentoch) {
+            return;
+        }
+        
+        this.sumaVCentoch -= eur * 100 + centov;
     }
     
     public void vloz(int eur, int centov) {
-        if (centov < 100) {
-            if (eur >= 0 && centov >= 0) {
-                this.sumaVCentoch += eur * 100 + centov;
-            }
+        if (centov >= 100) {
+            return;
         }
+        
+        if (eur < 0 || centov < 0) {
+            return;
+        }
+        
+        this.sumaVCentoch += eur * 100 + centov;
     }
     
     public String getStavUctu() {
