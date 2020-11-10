@@ -14,7 +14,7 @@ public class Banka {
         Random nahodneCisla = new Random();
         
         // bban moze byt 0000000000 az 9999999999
-        long bban = nahodneCisla.nextLong() % 10000000000L;
+        long bban = Math.abs(nahodneCisla.nextLong()) % 10000000000L;
         
         int pism1 = this.kodKrajiny.charAt(0) - 'A' + 10;
         int pism2 = this.kodKrajiny.charAt(1) - 'A' + 10;
