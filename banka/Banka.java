@@ -28,7 +28,7 @@ public class Banka {
         
         String iban = String.format("%s%02d%s000000%010d", this.kodKrajiny, kontrolnaCislica, this.kodBanky, bban);
         
-        Ucet ucet = new Ucet(iban, menoMajitela);
+        Ucet ucet = new Ucet(this, iban, menoMajitela);
         this.ucty.add(ucet);
         return ucet;
     }
