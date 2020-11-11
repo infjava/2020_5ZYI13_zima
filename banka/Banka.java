@@ -38,4 +38,14 @@ public class Banka {
             aktualny.vlozUroky(percenta);
         }
     }
+    
+    public Ucet getUcet(String iban) {
+        for (Ucet aktualny : this.ucty) {
+            if (aktualny.getIban().equals(iban)) {
+                return aktualny;
+            }
+        }
+        
+        return null;
+    }
 }
