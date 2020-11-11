@@ -50,7 +50,7 @@ public class Ucet {
         return String.format("%d,%02d €", this.sumaVCentoch / 100, this.sumaVCentoch % 100);
     }
     
-    public void vlozUroky(int percenta) {
+    public void vlozUroky(double percenta) {
         this.sumaVCentoch += this.sumaVCentoch * percenta / 100;
     }
 }

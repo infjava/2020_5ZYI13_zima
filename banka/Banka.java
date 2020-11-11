@@ -33,7 +33,7 @@ public class Banka {
         return ucet;
     }
     
-    public void zaratajUroky(int percenta) {
+    public void zaratajUroky(double percenta) {
         for (Ucet aktualny : this.ucty) {
             aktualny.vlozUroky(percenta);
         }
