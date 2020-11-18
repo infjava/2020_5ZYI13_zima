@@ -8,4 +8,12 @@ public class Dvere {
         this.otvorene = false;
         this.vybrateHracom = false;
     }
+    
+    public void vyber() {
+        this.vybrateHracom = true;
+    }
+    
+    public void zrusVyber() {
+        this.vybrateHracom = false;
+    }
 }
