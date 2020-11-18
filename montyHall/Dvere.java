@@ -21,6 +21,14 @@ public class Dvere {
         this.vybrateHracom = false;
     }
     
+    public boolean dajuSaOtvorit() {
+        return !this.vyhra && !this.vybrateHracom;
+    }
+    
+    public boolean dajuSaVybrat() {
+        return !this.vybrateHracom && !this.otvorene;
+    }
+    
     public void otvor() {
         if (this.vyhra) {
             return;

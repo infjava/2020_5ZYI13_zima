@@ -20,6 +20,14 @@ public class Sutaz {
         this.dvere[cislo].vyber();
     }
     
+    public boolean dvereSaDajuOtvorit(int cislo) {
+        return this.dvere[cislo].dajuSaOtvorit();
+    }
+    
+    public boolean dvereSaDajuVybrat(int cislo) {
+        return this.dvere[cislo].dajuSaVybrat();
+    }
+    
     public void otvorDvere(int cislo) {
         this.dvere[cislo].otvor();
     }
