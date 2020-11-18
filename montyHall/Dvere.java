@@ -16,4 +16,8 @@ public class Dvere {
     public void zrusVyber() {
         this.vybrateHracom = false;
     }
+    
+    public void otvor() {
+        this.otvorene = true;
+    }
 }
