@@ -10,6 +10,10 @@ public class Dvere {
     }
     
     public void vyber() {
+        if (this.otvorene) {
+            return;
+        }
+        
         this.vybrateHracom = true;
     }
     
@@ -18,6 +22,14 @@ public class Dvere {
     }
     
     public void otvor() {
+        if (this.vyhra) {
+            return;
+        }
+        
+        if (this.vybrateHracom) {
+            return;
+        }
+        
         this.otvorene = true;
     }
 }
