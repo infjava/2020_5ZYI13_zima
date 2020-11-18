@@ -32,4 +32,8 @@ public class Dvere {
         
         this.otvorene = true;
     }
+    
+    public boolean jeVyhra() {
+        return this.vybrateHracom && this.vyhra;
+    }
 }

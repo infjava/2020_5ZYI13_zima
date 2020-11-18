@@ -23,4 +23,14 @@ public class Sutaz {
     public void otvorDvere(int cislo) {
         this.dvere[cislo].otvor();
     }
+    
+    public boolean jeVyhra() {
+        for (Dvere dvere : this.dvere) {
+            if (dvere.jeVyhra()) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }
