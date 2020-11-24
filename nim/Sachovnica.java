@@ -1,5 +1,11 @@
+import java.util.ArrayList;
+
 public class Sachovnica {
+    private ArrayList<Stvorec> policka;
+    
     public Sachovnica(int sirka, int vyska) {
+        this.policka = new ArrayList<Stvorec>();
+        
         for (int riadok = 0; riadok < vyska; riadok++) {
             for (int stlpec = 0; stlpec < sirka; stlpec++) {
                 Stvorec policko = new Stvorec();
@@ -11,8 +17,21 @@ public class Sachovnica {
                 } else {
                     policko.zmenFarbu("white");
                 }
-                policko.zobraz();
+                
+                this.policka.add(policko);
             }
+        }
+    }
+    
+    public void zobraz() {
+        for (Stvorec policko : this.policka) {
+            policko.zobraz();
+        }
+    }
+    
+    public void skry() {
+        for (Stvorec policko : this.policka) {
+            policko.skry();
         }
     }
 }
