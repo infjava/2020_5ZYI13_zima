@@ -10,8 +10,8 @@ public class Sachovnica {
             for (int stlpec = 0; stlpec < sirka; stlpec++) {
                 Stvorec policko = new Stvorec();
                 policko.zmenStranu(20);
-                policko.posunVodorovne((sirka - stlpec - 1) * 20 - 60);
-                policko.posunZvisle(riadok * 20 - 50);
+                policko.posunVodorovne(stlpec * 20 - 60);
+                policko.posunZvisle((vyska - riadok - 1) * 20 - 50);
                 if ((riadok + stlpec) % 2 == 0) {
                     policko.zmenFarbu("black");
                 } else {
