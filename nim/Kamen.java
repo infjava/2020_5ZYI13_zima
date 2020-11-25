@@ -1,9 +1,18 @@
 public class Kamen {
+    private Kruh kruh;
+    
     public Kamen(Sachovnica sachovnica) {
-        Kruh kruh = new Kruh();
-        kruh.zmenPriemer(18);
-        kruh.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * 20);
-        kruh.posunZvisle(-59);
-        kruh.zobraz();
+        this.kruh = new Kruh();
+        this.kruh.zmenPriemer(18);
+        this.kruh.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * 20);
+        this.kruh.posunZvisle(-59);
+    }
+    
+    public void zobraz() {
+        this.kruh.zobraz();
+    }
+    
+    public void skry() {
+        this.kruh.skry();
     }
 }
