@@ -22,6 +22,14 @@ public class Kamen {
         this.kruh.skry();
     }
     
+    public int getPoziciaStlpec() {
+        return this.poziciaStlpec;
+    }
+
+    public int getPoziciaRiadok() {
+        return this.poziciaRiadok;
+    }
+    
     public void posunSa(int riadok, int stlpec) {
         this.kruh.skry();
         this.kruh.posunZvisle((this.poziciaRiadok - riadok) * 20);
@@ -31,4 +39,4 @@ public class Kamen {
         this.poziciaRiadok = riadok;
         this.poziciaStlpec = stlpec;
     }
-}
+} 
