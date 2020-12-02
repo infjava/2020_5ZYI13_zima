@@ -32,36 +32,24 @@ public class Nim {
     }
     
     public void posunDole(int oKolko) {
-        if (oKolko <= 0) {
+        this.posun(0, oKolko);
+    }
+
+    public void posunVlavo(int oKolko) {
+        this.posun(oKolko, 0);
+    }
+    
+    private void posun(int oKolkoStlpcov, int oKolkoRiadkov) {
+        if (oKolkoStlpcov <= 0 && oKolkoRiadkov <= 0) {
             System.out.println("Musis tahat o kladny pocet policok");
             return;
         }
-        int stlpec = this.kamen.getPoziciaStlpec();
-        int riadok = this.kamen.getPoziciaRiadok() - oKolko;
+        int stlpec = this.kamen.getPoziciaStlpec() - oKolkoStlpcov;
+        int riadok = this.kamen.getPoziciaRiadok() - oKolkoRiadkov;
         if (riadok < 1) {
             System.out.println("Snazis sa vybehnut zo sachovnice");
             return;
         }
-        this.kamen.posunSa(riadok, stlpec);
-        
-        if (this.kamen.getPoziciaRiadok() == 1 && this.kamen.getPoziciaStlpec() == 1) {
-            this.menoVyhercu = this.getHracNaTahu();
-        }
-        
-        this.prvyNaTahu = !this.prvyNaTahu;
-        
-        if (this.getHracNaTahu().equals("PC") && this.menoVyhercu == null) {
-            this.tahPocitaca();
-        }
-    }
-
-    public void posunVlavo(int oKolko) {
-        if (oKolko <= 0) {
-            System.out.println("Musis tahat o kladny pocet policok");
-            return;
-        }
-        int stlpec = this.kamen.getPoziciaStlpec() - oKolko;
-        int riadok = this.kamen.getPoziciaRiadok();
         if (stlpec < 1) {
             System.out.println("Snazis sa vybehnut zo sachovnice");
             return;
