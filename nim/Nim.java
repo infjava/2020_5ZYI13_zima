@@ -79,6 +79,15 @@ public class Nim {
     }
     
     private void tahPocitaca() {
-        System.out.println("Na tahu je pocitac");
+        int stlpec = this.kamen.getPoziciaStlpec();
+        int riadok = this.kamen.getPoziciaRiadok();
+        
+        if (stlpec < riadok) {
+            this.posunDole(riadok - stlpec);
+        } else if (stlpec > riadok) {
+            this.posunVlavo(stlpec - riadok);
+        } else {
+            // nahodny pohyb
+        }
     }
 }
