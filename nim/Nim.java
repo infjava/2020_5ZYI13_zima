@@ -3,12 +3,19 @@ public class Nim {
     private Kamen kamen;
     private String[] menaHracov;
     private boolean prvyNaTahu;
+    private String menoVyhercu;
+    
     public Nim(int sirka, int vyska, String menoPrveho, String menoDruheho) {
         Sachovnica sachovnica = new Sachovnica(sirka, vyska);
         this.kamen = sachovnica.vytvorKamen();
         sachovnica.zobraz();
         this.menaHracov = new String[] {menoPrveho, menoDruheho};
         this.prvyNaTahu = true;
+        this.menoVyhercu = null;
+    }
+    
+    public String getMenoVyhercu() {
+        return this.menoVyhercu;
     }
     
     public String getHracNaTahu() {
@@ -31,6 +38,11 @@ public class Nim {
             return;
         }
         this.kamen.posunSa(riadok, stlpec);
+        
+        if (this.kamen.getPoziciaRiadok() == 1 && this.kamen.getPoziciaStlpec() == 1) {
+            this.menoVyhercu = this.getHracNaTahu();
+        }
+        
         this.prvyNaTahu = !this.prvyNaTahu;
     }
 
@@ -46,6 +58,11 @@ public class Nim {
             return;
         }
         this.kamen.posunSa(riadok, stlpec);
+        
+        if (this.kamen.getPoziciaRiadok() == 1 && this.kamen.getPoziciaStlpec() == 1) {
+            this.menoVyhercu = this.getHracNaTahu();
+        }
+        
         this.prvyNaTahu = !this.prvyNaTahu;
     }
 }
