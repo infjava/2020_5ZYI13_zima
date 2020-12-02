@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Nim {
     private Kamen kamen;
@@ -49,7 +50,7 @@ public class Nim {
         
         this.prvyNaTahu = !this.prvyNaTahu;
         
-        if (this.getHracNaTahu().equals("PC")) {
+        if (this.getHracNaTahu().equals("PC") && this.menoVyhercu == null) {
             this.tahPocitaca();
         }
     }
@@ -73,12 +74,13 @@ public class Nim {
         
         this.prvyNaTahu = !this.prvyNaTahu;
         
-        if (this.getHracNaTahu().equals("PC")) {
+        if (this.getHracNaTahu().equals("PC") && this.menoVyhercu == null) {
             this.tahPocitaca();
         }
     }
     
     private void tahPocitaca() {
+        Random nahodneCisla = new Random();
         int stlpec = this.kamen.getPoziciaStlpec();
         int riadok = this.kamen.getPoziciaRiadok();
         
@@ -86,8 +88,18 @@ public class Nim {
             this.posunDole(riadok - stlpec);
         } else if (stlpec > riadok) {
             this.posunVlavo(stlpec - riadok);
+        } else if (stlpec > 2) {
+            if (nahodneCisla.nextBoolean()) {
+                this.posunDole(nahodneCisla.nextInt(riadok - 2) + 1);
+            } else {
+                this.posunVlavo(nahodneCisla.nextInt(stlpec - 2) + 1);
+            }
         } else {
-            // nahodny pohyb
+            if (nahodneCisla.nextBoolean()) {
+                this.posunDole(1);
+            } else {
+                this.posunVlavo(1);
+            }
         }
     }
 }
