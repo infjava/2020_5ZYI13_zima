@@ -12,6 +12,10 @@ public class Nim {
         this.menaHracov = new String[] {menoPrveho, menoDruheho};
         this.prvyNaTahu = true;
         this.menoVyhercu = null;
+        
+        if (this.getHracNaTahu().equals("PC")) {
+            this.tahPocitaca();
+        }
     }
     
     public String getMenoVyhercu() {
@@ -44,6 +48,10 @@ public class Nim {
         }
         
         this.prvyNaTahu = !this.prvyNaTahu;
+        
+        if (this.getHracNaTahu().equals("PC")) {
+            this.tahPocitaca();
+        }
     }
 
     public void posunVlavo(int oKolko) {
@@ -64,5 +72,13 @@ public class Nim {
         }
         
         this.prvyNaTahu = !this.prvyNaTahu;
+        
+        if (this.getHracNaTahu().equals("PC")) {
+            this.tahPocitaca();
+        }
+    }
+    
+    private void tahPocitaca() {
+        System.out.println("Na tahu je pocitac");
     }
 }
