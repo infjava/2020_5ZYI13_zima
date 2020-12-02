@@ -39,6 +39,10 @@ public class Nim {
         this.posun(oKolko, 0);
     }
     
+    public void posunSikmo(int oKolko) {
+        this.posun(oKolko, oKolko);
+    }
+    
     private void posun(int oKolkoStlpcov, int oKolkoRiadkov) {
         if (oKolkoStlpcov <= 0 && oKolkoRiadkov <= 0) {
             System.out.println("Musis tahat o kladny pocet policok");
