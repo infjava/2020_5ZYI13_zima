@@ -43,6 +43,14 @@ public class Nim {
         this.posun(oKolko, oKolko);
     }
     
+    public int getPoziciaKamenaStlpec() {
+        return this.kamen.getPoziciaStlpec();
+    }
+    
+    public int getPoziciaKamenaRiadok() {
+        return this.kamen.getPoziciaRiadok();
+    }
+    
     private void posun(int oKolkoStlpcov, int oKolkoRiadkov) {
         if (oKolkoStlpcov <= 0 && oKolkoRiadkov <= 0) {
             System.out.println("Musis tahat o kladny pocet policok");
