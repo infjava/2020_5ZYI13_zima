@@ -13,8 +13,8 @@ public class NimKlikaci {
     }
     
     public void vyberSuradnice(int x, int y) {
-        int riadok = this.vyska - y / 20;
-        int stlpec = x / 20 + 1;
+        int riadok = this.vyska - y / Sachovnica.VELKOST_POLICKA;
+        int stlpec = x / Sachovnica.VELKOST_POLICKA + 1;
         
         int zmenaRiadku = this.hra.getPoziciaKamenaRiadok() - riadok;
         int zmenaStlpca = this.hra.getPoziciaKamenaStlpec() - stlpec;

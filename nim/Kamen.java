@@ -6,8 +6,8 @@ public class Kamen {
     
     public Kamen(Sachovnica sachovnica) {
         this.kruh = new Kruh();
-        this.kruh.zmenPriemer(18);
-        this.kruh.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * 20);
+        this.kruh.zmenPriemer(Sachovnica.VELKOST_POLICKA - 2);
+        this.kruh.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * Sachovnica.VELKOST_POLICKA);
         this.kruh.posunZvisle(-59);
         
         this.poziciaRiadok = sachovnica.getVyska();
@@ -32,8 +32,8 @@ public class Kamen {
     
     public void posunSa(int riadok, int stlpec) {
         this.kruh.skry();
-        this.kruh.posunZvisle((this.poziciaRiadok - riadok) * 20);
-        this.kruh.posunVodorovne(-(this.poziciaStlpec - stlpec) * 20);
+        this.kruh.posunZvisle((this.poziciaRiadok - riadok) * Sachovnica.VELKOST_POLICKA);
+        this.kruh.posunVodorovne(-(this.poziciaStlpec - stlpec) * Sachovnica.VELKOST_POLICKA);
         this.kruh.zobraz();
         
         this.poziciaRiadok = riadok;
