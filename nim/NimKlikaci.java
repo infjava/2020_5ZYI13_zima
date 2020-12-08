@@ -8,6 +8,8 @@ public class NimKlikaci {
         this.vyska = vyska;
         
         new Manazer().spravujObjekt(this);
+        
+        System.out.format("Na tahu je '%s'%n", this.hra.getHracNaTahu());
     }
     
     public void vyberSuradnice(int x, int y) {
@@ -23,6 +25,12 @@ public class NimKlikaci {
             this.hra.posunDole(zmenaRiadku);
         } else if (zmenaRiadku == zmenaStlpca) {
             this.hra.posunSikmo(zmenaRiadku);
+        }
+        
+        if (this.hra.getMenoVyhercu() == null) {
+            System.out.format("Na tahu je '%s'%n", this.hra.getHracNaTahu());
+        } else {
+            System.out.format("Vyhral hrac '%s'%n", this.hra.getMenoVyhercu());
         }
     }
 }
