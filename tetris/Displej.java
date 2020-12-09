@@ -17,6 +17,7 @@ public class Displej {
                 pixel.posunVodorovne(x * Displej.VELKOST_PIXELU - 60);
                 pixel.posunZvisle(y * Displej.VELKOST_PIXELU - 50);
                 pixel.zmenFarbu("black");
+                pixel.zobraz();
                 
                 this.pixely[y][x] = pixel;
             }
@@ -25,9 +26,9 @@ public class Displej {
     
     public void nastav(int x, int y, boolean svieti) {
         if (svieti) {
-            this.pixely[y][x].zobraz();
+            this.pixely[y][x].zmenFarbu("red");
         } else {
-            this.pixely[y][x].skry();
+            this.pixely[y][x].zmenFarbu("black");
         }
     }
 }
