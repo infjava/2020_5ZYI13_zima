@@ -25,6 +25,12 @@ public class Tetromino {
         this.nakresli();
     }
     
+    public void posunDole() {
+        this.zmaz();
+        this.poziciaY++;
+        this.nakresli();
+    }
+    
     private void zmaz() {
         for (int y = 0; y < this.polickoSvieti.length; y++) {
             for (int x = 0; x < this.polickoSvieti[y].length; x++) {
