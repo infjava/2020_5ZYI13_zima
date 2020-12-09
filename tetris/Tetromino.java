@@ -9,6 +9,8 @@ public class Tetromino {
         
         this.poziciaX = (Displej.SIRKA - this.polickoSvieti[0].length) / 2;
         this.poziciaY = 0;
+        
+        this.nakresli();
     }
     
     public void posunVlavo() {
@@ -23,7 +25,7 @@ public class Tetromino {
         this.nakresli();
     }
     
-    public void zmaz() {
+    private void zmaz() {
         for (int y = 0; y < this.polickoSvieti.length; y++) {
             for (int x = 0; x < this.polickoSvieti[y].length; x++) {
                 Displej displej = Displej.getDisplej();
@@ -32,7 +34,7 @@ public class Tetromino {
         }
     }
     
-    public void nakresli() {
+    private void nakresli() {
         for (int y = 0; y < this.polickoSvieti.length; y++) {
             for (int x = 0; x < this.polickoSvieti[y].length; x++) {
                 Displej displej = Displej.getDisplej();
