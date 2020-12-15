@@ -1,5 +1,6 @@
 public class Tetris {
     private Tetromino padajuce;
+    private int cisloTiku;
     
     public Tetris() {
         this.padajuce = new Tetromino(
@@ -7,6 +8,8 @@ public class Tetris {
                 {true, false},{true, false},{true,true}
             }
         );
+        
+        this.cisloTiku = 0;
         
         new Manazer().spravujObjekt(this);
     }
@@ -20,7 +23,10 @@ public class Tetris {
     }
     
     public void tik() {
-        this.padajuce.posunDole();
+        this.cisloTiku++;
+        if ((this.cisloTiku % 4) == 0) {
+            this.padajuce.posunDole();
+        }
     }
     
     public void aktivuj() {
