@@ -14,18 +14,30 @@ public class Tetromino {
     }
     
     public void posunVlavo() {
+        if (this.poziciaX <= 0) {
+            return;
+        }
+        
         this.zmaz();
         this.poziciaX--;
         this.nakresli();
     }
     
     public void posunVpravo() {
+        if (this.poziciaX + this.polickoSvieti[0].length >= Displej.SIRKA) {
+            return;
+        }
+        
         this.zmaz();
         this.poziciaX++;
         this.nakresli();
     }
     
     public void posunDole() {
+        if (this.poziciaY + this.polickoSvieti.length >= Displej.VYSKA) {
+            return;
+        }
+        
         this.zmaz();
         this.poziciaY++;
         this.nakresli();
@@ -49,6 +61,15 @@ public class Tetromino {
         }
         
         this.zmaz();
+        
+        if (this.poziciaX + novaSirka > Displej.SIRKA) {
+            this.poziciaX = Displej.SIRKA - novaSirka;
+        }
+        
+        if (this.poziciaY + novaVyska > Displej.VYSKA) {
+            this.poziciaY = Displej.VYSKA - novaVyska;
+        }
+        
         this.polickoSvieti = novePolicka;
         this.nakresli();
     }
