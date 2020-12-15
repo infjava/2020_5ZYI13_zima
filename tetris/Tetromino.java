@@ -31,6 +31,28 @@ public class Tetromino {
         this.nakresli();
     }
     
+    public void otoc() {
+        int staraSirka = this.polickoSvieti[0].length;
+        int staraVyska = this.polickoSvieti.length;
+        int novaSirka=staraVyska;
+        int novaVyska=staraSirka;
+        
+        boolean[][] novePolicka = new boolean[novaVyska][novaSirka];
+        
+        for (int staraY = 0; staraY < staraVyska; staraY++) {
+            for (int staraX = 0; staraX < staraSirka; staraX++) {
+                int novaX = staraY;
+                int novaY = staraSirka - 1 - staraX;
+                
+                novePolicka[novaY][novaX] = this.polickoSvieti[staraY][staraX];
+            }
+        }
+        
+        this.zmaz();
+        this.polickoSvieti = novePolicka;
+        this.nakresli();
+    }
+    
     private void zmaz() {
         for (int y = 0; y < this.polickoSvieti.length; y++) {
             for (int x = 0; x < this.polickoSvieti[y].length; x++) {
