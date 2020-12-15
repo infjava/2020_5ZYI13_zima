@@ -26,6 +26,14 @@ public class Tetris {
         this.cisloTiku++;
         if ((this.cisloTiku % 4) == 0) {
             this.padajuce.posunDole();
+            
+            if (this.padajuce.jeDole()) {
+                this.padajuce = new Tetromino(
+                    new boolean[][] {
+                        {true, false},{true, false},{true,true}
+                    }
+                );
+            }
         }
     }
     

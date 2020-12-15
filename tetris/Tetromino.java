@@ -74,6 +74,10 @@ public class Tetromino {
         this.nakresli();
     }
     
+    public boolean jeDole() {
+        return this.poziciaY + this.polickoSvieti.length >= Displej.VYSKA;
+    }
+    
     private void zmaz() {
         for (int y = 0; y < this.polickoSvieti.length; y++) {
             for (int x = 0; x < this.polickoSvieti[y].length; x++) {
