@@ -1,13 +1,14 @@
+import java.io.IOException;
+
 public class Tetris {
+    private GeneratorTetromin generator;
     private Tetromino padajuce;
     private int cisloTiku;
     
-    public Tetris() {
-        this.padajuce = new Tetromino(
-            new boolean[][] {
-                {true, false},{true, false},{true,true}
-            }
-        );
+    public Tetris() throws IOException {
+        this.generator = new GeneratorTetromin();
+        
+        this.padajuce = this.generator.vytvorNahodne();
         
         this.cisloTiku = 0;
         
@@ -28,11 +29,7 @@ public class Tetris {
             this.padajuce.posunDole();
             
             if (this.padajuce.jeDole()) {
-                this.padajuce = new Tetromino(
-                    new boolean[][] {
-                        {true, false},{true, false},{true,true}
-                    }
-                );
+                this.padajuce = this.generator.vytvorNahodne();
             }
         }
     }
