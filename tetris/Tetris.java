@@ -11,8 +11,6 @@ public class Tetris {
         this.padajuce = this.generator.vytvorNahodne();
         
         this.cisloTiku = 0;
-        
-        new Manazer().spravujObjekt(this);
     }
     
     public void posunVlavo() {
@@ -36,5 +34,9 @@ public class Tetris {
     
     public void aktivuj() {
         this.padajuce.otoc();
+    }
+    
+    public void zrus() {
+        System.exit(0);
     }
 }
